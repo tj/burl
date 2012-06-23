@@ -30,8 +30,8 @@ $ burl -j {"name":"tobi"} /user
   With `burl(1)` you can define header fields without `-H`:
 
 ```
-$ burl If-None-Match etag /users
-$ burl If-None-Match etag Accept: application/json /users
+$ burl If-None-Match: etag /users
+$ burl If-None-Match: etag Accept: application/json /users
 ```
 
 ## Accept shorthand
