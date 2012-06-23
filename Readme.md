@@ -10,7 +10,7 @@
 ## Optional hostname
 
  By default `burl(1)` will assume "http://localhost:3000", however you
- can alter this by exporting `BURL` in your terminal session:
+ can alter this by exporting `BURL` in your terminal session or `.profile`:
 
 ```
 $ export BURL=http://site-im-testing.com
