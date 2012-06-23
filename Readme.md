@@ -1,8 +1,7 @@
 
 # Better curl(1)
 
-  `burl(1)` is a tiny shell script augmenting `curl(1)` with some helpful shortcuts
-  to make your day a little bit better.
+  `burl(1)` is a tiny shell script augmenting `curl(1)` with some helpful shortcuts.
 
 ## Installation
 
@@ -14,7 +13,7 @@
  can alter this by exporting `BURL` in your terminal session:
 
 ```
-BURL=http://site-im-testing.com
+$ export BURL=http://site-im-testing.com
 $ burl /pathname
 ```
 
