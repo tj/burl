@@ -22,7 +22,7 @@ $ burl /pathname
   __POST__ data as "Content-Type: application/json":
   
 ```
-$ burl -j {"name":"tobi"} http://local/user
+$ burl -j {"name":"tobi"} /user
 ```
 
 ## Expressive header fields
