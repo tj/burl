@@ -41,9 +41,12 @@ while test $# -ne 0; do
     --debug)
       debug=1
       ;;
+    --pretty)
+      pretty=1
+      ;;
     -j|--json)
       json=$1; shift
-      curl="$curl -H 'Content-Type: application/json' -d '$json'"
+      args="$args -H 'Content-Type: application/json' -d '$json'"
       ;;
     *:)
       val=$1; shift
@@ -75,5 +78,6 @@ while test $# -ne 0; do
   esac
 done
 
+test $pretty && args="$args | python -mjson.tool"
 test $debug && echo "curl $args"
 eval "curl $args"

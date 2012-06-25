@@ -45,3 +45,7 @@ $ burl /users .json
 $ burl /users .text
 $ burl /users .html
 ```
+
+## Extras
+
+    * Added support for prettyjson. It needs python and json.tool module.
