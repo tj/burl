@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-args=
 debug=
+args="-s"
 BURL=${BURL:-http://localhost:3000}
 ws="[[:space:]]"
 
