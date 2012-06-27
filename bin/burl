@@ -3,7 +3,7 @@
 debug=
 args="-s"
 BURL=${BURL:-http://localhost:3000}
-ws="[[:space:]]"
+quote="[[:space:]]|[&<>;]"
 
 #
 # output usage
@@ -69,7 +69,7 @@ while test $# -ne 0; do
       exit
       ;;
     *)
-      if [[ $arg =~ $ws ]]; then
+      if [[ $arg =~ $quote ]]; then
         args="$args \"$arg\""
       else
         args="$args $arg"
