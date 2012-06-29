@@ -48,7 +48,23 @@ while test $# -ne 0; do
       json=$1; shift
       args="$args -H 'Content-Type: application/json' -d '$json'"
       ;;
-    GET|POST|PUT|HEAD|DELETE|OPTIONS|PATCH|TRACE|COPY|LOCK|\
+    POST)
+      args="$args -X $arg"
+      c=${1:0:1}
+
+      # json array
+      if test "$c" = "["; then
+        args="$args -d \"$1\" -H \"Content-Type: application/json\""
+        shift
+      fi
+
+      # json object
+      if test "$c" = "{"; then
+        args="$args -d \"$1\" -H \"Content-Type: application/json\""
+        shift
+      fi
+      ;;
+    GET|PUT|HEAD|DELETE|OPTIONS|PATCH|TRACE|COPY|LOCK|\
     MKCOL|MOVE|PROPFIND|PROPPATCH|UNLOCK|REPORT|MKACTIVITY|\
     CHECKOUT|MERGE|NOTIFY|SUBSCRIBE|UNSUBSCRIBE)
       args="$args -X $arg"

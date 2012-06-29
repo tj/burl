@@ -41,6 +41,22 @@ $ burl PATCH -d 'email=tobi@learnboost.com' /user/12
 $ burl DELETE /users
 ```
 
+## JSON request bodies
+
+ Usually when you want to request with some JSON you do something like:
+
+```
+$ curl -X PATCH -d '{"name":"tobi"}' -H "Content-Type: application/json" http://localhost:3000/user/12
+```
+
+ With `burl(1)` you can simply add a JSON array or object after the HTTP verb:
+
+```
+$ burl PATCH '{"name":"tobi"}' /user/12
+$ burl POST '[1,2,3]' /numbers
+```
+
+
 ## Expressive header fields
 
   With `burl(1)` you can define header fields without `-H`:
