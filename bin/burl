@@ -48,7 +48,9 @@ while test $# -ne 0; do
       json=$1; shift
       args="$args -H 'Content-Type: application/json' -d '$json'"
       ;;
-    POST)
+    GET|POST|PUT|HEAD|DELETE|OPTIONS|PATCH|TRACE|COPY|LOCK|\
+    MKCOL|MOVE|PROPFIND|PROPPATCH|UNLOCK|REPORT|MKACTIVITY|\
+    CHECKOUT|MERGE|NOTIFY|SUBSCRIBE|UNSUBSCRIBE)
       args="$args -X $arg"
       c=${1:0:1}
 
@@ -63,11 +65,6 @@ while test $# -ne 0; do
         args="$args -d \"$1\" -H \"Content-Type: application/json\""
         shift
       fi
-      ;;
-    GET|PUT|HEAD|DELETE|OPTIONS|PATCH|TRACE|COPY|LOCK|\
-    MKCOL|MOVE|PROPFIND|PROPPATCH|UNLOCK|REPORT|MKACTIVITY|\
-    CHECKOUT|MERGE|NOTIFY|SUBSCRIBE|UNSUBSCRIBE)
-      args="$args -X $arg"
       ;;
     *:)
       val=$1; shift

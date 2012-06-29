@@ -53,7 +53,7 @@ $ curl -X PATCH -d '{"name":"tobi"}' -H "Content-Type: application/json" http://
 
 ```
 $ burl PATCH '{"name":"tobi"}' /user/12
-$ burl POST '[1,2,3]' /numbers
+$ burl POST [1,2,3] /numbers
 ```
 
 
