@@ -25,6 +25,16 @@ $ burl /pathname
 $ burl -j {"name":"tobi"} /user
 ```
 
+## HTTP verbs
+
+  Instead of the typical `-X DELETE` verb usage with `curl(1)`, you may use
+  the verbs directly, for example:
+
+```
+$ burl PATCH -d 'email=tobi@learnboost.com' /user/12
+$ burl DELETE /users
+```
+
 ## Expressive header fields
 
   With `burl(1)` you can define header fields without `-H`:
