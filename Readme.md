@@ -80,4 +80,18 @@ $ burl /users .html
 
 ## Extras
 
-    * Added support for prettyjson. It needs python and json.tool module.
+  * Added support for prettyjson. It needs python and json.tool module.
+
+## Aliases
+
+  Try these aliases if you want to get fancy:
+
+```
+alias GET='burl GET'
+alias HEAD='burl HEAD'
+alias POST='burl POST'
+alias PUT='burl PUT'
+alias PATCH='burl PATCH'
+alias DELETE='burl DELETE'
+alias OPTIONS='burl OPTIONS'
+```
