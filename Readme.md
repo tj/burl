@@ -88,7 +88,7 @@ $ burl /users .html
 
 ```
 alias GET='burl GET'
-alias HEAD='burl HEAD'
+alias HEAD='burl -I'
 alias POST='burl POST'
 alias PUT='burl PUT'
 alias PATCH='burl PATCH'
