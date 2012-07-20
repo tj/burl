@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-version="0.0.1"
+version="1.0.0"
 debug=
 args="-s"
 BURL=${BURL:-http://localhost:3000}
