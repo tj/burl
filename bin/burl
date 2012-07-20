@@ -25,10 +25,17 @@ usage() {
     $ burl /users .text
     $ burl /users .html
     $ burl /search?query=foo
-    $ burl --json '{"name":"tobi"}' /user
     $ burl Accept: application/json /users
     $ burl If-None-Match: etag /users
+    $ burl GET /users If-None-Match: etag
     $ burl -X GET --json '{"query":"something"}' /search
+    $ burl PATCH '{"name":"tobi"}' /user/12
+    $ burl POST [1,2,3] /numbers
+
+  Environment:
+
+    $ export BURL=http://site-im-testing.com
+    $ burl /pathname
 
 EOF
 }
