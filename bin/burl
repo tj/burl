@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+version="0.0.1"
 debug=
 args="-s"
 BURL=${BURL:-http://localhost:3000}
@@ -17,6 +18,8 @@ usage() {
   Options:
 
     -j, --json <data>    issue an application/json request
+    -u, --update         update burl from the git repository
+    --burl-version       output burl(1) version
 
   Examples:
 
@@ -38,6 +41,22 @@ usage() {
     $ burl /pathname
 
 EOF
+}
+
+#
+# update burl(1)
+#
+
+update() {
+  local orig=$PWD
+
+  cd /tmp \
+    && rm -fr ./burl \
+    && git clone --depth 1 https://github.com/visionmedia/burl.git \
+    && cd burl \
+    && make install \
+    && cd "$orig" \
+    && echo "... updated burl $version -> $(burl --burl-version)"
 }
 
 # parse args
@@ -89,8 +108,16 @@ while test $# -ne 0; do
     .json)
       args="$args -H Accept:application/json"
       ;;
+    --burl-version)
+      echo $version
+      exit
+      ;;
     -h|--help)
       usage
+      exit
+      ;;
+    -u|--update)
+      update
       exit
       ;;
     *)
