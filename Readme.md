@@ -1,7 +1,8 @@
-
 # Better curl(1)
 
   `burl(1)` is a tiny shell script augmenting `curl(1)` with some helpful shortcuts.
+  
+    $ POST '{"title":"better curl(1)"}' /todo/item
 
 ## Installation
 
