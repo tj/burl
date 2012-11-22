@@ -13,7 +13,7 @@ quote="[[:space:]]|[&<>;]"
 usage() {
   cat <<EOF
   
-  Usage: burl [options] <url> 
+  Usage: burl [options] <url>
 
   Options:
 
@@ -34,6 +34,7 @@ usage() {
     $ burl -X GET --json '{"query":"something"}' /search
     $ burl PATCH '{"name":"tobi"}' /user/12
     $ burl POST [1,2,3] /numbers
+    $ burl POST @body.json /
 
   Environment:
 
@@ -89,6 +90,12 @@ while test $# -ne 0; do
       # json object
       if test "$c" = "{"; then
         args="$args -d \"$1\" -H \"Content-Type: application/json\""
+        shift
+      fi
+
+      # @json file
+      if test "$c" = "@"; then
+        args="$args --data $1 -H \"Content-Type: application/json\""
         shift
       fi
       ;;
