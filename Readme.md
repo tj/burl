@@ -57,6 +57,20 @@ $ burl PATCH '{"name":"tobi"}' /user/12
 $ burl POST [1,2,3] /numbers
 ```
 
+## JSON requests from files
+
+  To issue a request with the contents of `./some.json`, instead
+  of writing:
+
+```
+$ curl --data @some.json -H "Content-Type: application/json" http://localhost:3000/
+```
+
+  Simply invoke:
+
+```
+$ POST @some.json /
+```
 
 ## Expressive header fields
 
