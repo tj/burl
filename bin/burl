@@ -104,7 +104,7 @@ while test $# -ne 0; do
       args="$args -H \"$arg $val\""
       ;;
     /*)
-      args="$args $BURL$arg"
+      args="$args '$BURL$arg'"
       ;;
     .html)
       args="$args -H Accept:text/html"
